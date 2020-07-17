@@ -3,7 +3,7 @@ let pageFiles = new Object();
 document.addEventListener('DOMContentLoaded', async () => {
     
     for (let i = 0; i < pages.length; i++) {
-        pageFiles[i] = (await (getJSON(pages[i] + '.json')));
+        pageFiles[i] = (await (getJSON('pages/' + pages[i] + '.json')));
     } // ToDo 上限を設けて、More ボタンでさらに読み込む
     console.log(pageFiles[0]);
 })
