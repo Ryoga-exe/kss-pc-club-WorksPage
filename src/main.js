@@ -1,12 +1,27 @@
 let pages = ['sample', '10sChallenge', 'sigmabeat', 'tetTyping'];  // ToDo : 動的に、自動で page ディレクトリより取得
-let pageFiles = new Object();
+let pageFiles = new Array();
 document.addEventListener('DOMContentLoaded', async () => {
     
+    await loadPages(); // ToDo 上限を設けて、More ボタンでさらに読み込む
+    // ソートをする
+    console.log(pageFiles); // to debug
+
+    let works = document.getElementById('works');
+
+    pageFiles.forEach(c => {
+        let container = document.createElement('div');
+        container.className = 'work-container'
+        container.textContent = c.name == undefined ? ' ' : c.name;
+        works.appendChild(container);
+    });
+    
+})
+
+async function loadPages() {
     for (let i = 0; i < pages.length; i++) {
         pageFiles[i] = (await (getJSON('pages/' + pages[i] + '.json')));
-    } // ToDo 上限を設けて、More ボタンでさらに読み込む
-    console.log(pageFiles[0]);
-})
+    }
+}
 
 async function getJSON(fileName) {
     let jsonContent;

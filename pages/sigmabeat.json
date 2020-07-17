@@ -1,4 +1,5 @@
 {
     "name" : "Sigmabeat",
-    "tags" : ["2020","game"]
+    "tags" : ["2020","game"],
+    "image" : "img/sigmabeat.png"
 }

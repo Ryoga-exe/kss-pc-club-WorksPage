@@ -1,4 +1,5 @@
 {
     "name" : "Tetris Typing",
-    "tags" : ["2020","game"]
+    "tags" : ["2020","game"],
+    "image" : "img/tettype.png"
 }
