@@ -1,5 +1,6 @@
 {
     "name" : "Sigmabeat",
-    "tags" : ["2020","game"],
-    "image" : "img/sigmabeat.png"
+    "author" : "Ryoga.exe",
+    "tags" : ["2020","game", "rhythm game"],
+    "image" : "img/sgmbeat.png"
 }

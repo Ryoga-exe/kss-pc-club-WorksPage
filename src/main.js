@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         let container = document.createElement('div');
         container.className = 'work-container'
         container.textContent = c.name == undefined ? ' ' : c.name;
+        container.style.color = 'blue';
+        container.style.backgroundImage = 'pages/img/sgmbeat.png';
         works.appendChild(container);
     });
-    
 })
 
 async function loadPages() {
