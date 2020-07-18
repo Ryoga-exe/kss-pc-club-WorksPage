@@ -11,9 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     pageFiles.forEach(c => {
         let container = document.createElement('div');
         container.className = 'work-container'
-        container.textContent = c.name == undefined ? ' ' : c.name;
-        container.style.color = 'blue';
-        container.style.backgroundImage = 'pages/img/sgmbeat.png';
+        container.textContent = c.name === undefined ? ' ' : c.name;
+        if (c.image !== undefined) container.style.backgroundImage = 'url(../pages/' + c.image + ')';
         works.appendChild(container);
     });
 })
