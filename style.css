@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+    outline: none;
+}
+
+.selection-disabled {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: Roboto, "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+/**************************/
+
+#works {
+    display : -webkit-box;
+    display : -webkit-flex;
+    display : -ms-flexbox;
+    display : flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap    : wrap;
+    flex-wrap        : wrap;
+    background-color: aquamarine;
+    width: 100%;
+}
+
+.work-container {
+    display: block;
+    background-color: white;
+    background-size: cover;
+    background-position: center center;
+    text-align:  center;
+    width     : 130px;
+    height    : 100px;
+    margin    : 10px;
+    padding   : 3px;
+}
