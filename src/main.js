@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         let container = document.createElement('div');
         container.className = 'work-container'
         container.textContent = c.name === undefined ? ' ' : c.name;
-        if (c.image !== undefined) container.style.backgroundImage = 'url(../pages/' + c.image + ')';
+        if (c.image !== undefined) container.style.backgroundImage = 'url(pages/' + c.image + ')';
         works.appendChild(container);
     });
 })
