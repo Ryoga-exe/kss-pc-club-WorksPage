@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     let node = document.getElementsByTagName('include_');
-
+    
     for (let i = 0; i < node.length; i++) {
         const src = node[i].getAttribute('src');
         const css = node[i].getAttribute('css');
