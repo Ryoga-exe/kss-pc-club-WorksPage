@@ -45,14 +45,14 @@ a{
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap    : wrap;
     flex-wrap        : wrap;
-    justify-content  : space-between;
+    justify-content  : flex-start;
     background-color : aquamarine;
     padding-left  : 4%;
     padding-right : 4%;
     width         : 100%;
 }
 
-.work-container {
+#works>.contents {
     position: relative;
     display: block;
     background-color: white;
@@ -66,7 +66,7 @@ a{
     margin    : 10px;
 }
 
-.work-container span {
+.contents span {
     display : -webkit-box;
     display : -webkit-flex;
     display : -ms-flexbox;
@@ -85,7 +85,7 @@ a{
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.6), 0px 1px 3px rgba(0, 0, 0, 0.6), 0px 1px 0 rgba(0, 0, 0, 0.6);
     transition: height 0.15s ease-out, font-size 0.15s ease-out;
 }
-.work-container:hover span {
+.contents:hover span {
     height: 100%;
     border-radius: 2vh;
     font-size: 1.2em;
