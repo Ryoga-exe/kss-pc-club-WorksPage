@@ -1,6 +1,7 @@
 {
     "name" : "15puzzle",
     "author" : "Anthony",
+    "year" : 2019,
     "tags" : ["2019","game"],
     "image" : "img/15puzzle.png"
 }

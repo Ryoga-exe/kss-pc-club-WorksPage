@@ -9,15 +9,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     let tagStr = getUrlVars().tag;
     let tags = tagStr === undefined ? null : tagStr.split('+');
     console.log(tags); // to debug
-    
+
     const works = document.getElementById('works');
     pageFiles.forEach(c => {
         let hasTags = false;
         if (tags !== null) {
-            for (let i = 0; i < c.tags.length; i++) {
-                tags.forEach(t => {
-                    if (c.tags[i] == t) hasTags = true;
-                })
+            if (c.tags !== undefined) {
+                let count = 0;
+                for (let i = 0; i < c.tags.length; i++) {
+                    tags.forEach(t => {
+                        if (c.tags[i] == t) count++;
+                    })
+                }
+                if (tags.length == count) hasTags = true;
             }
         }
         else hasTags = true;
@@ -47,11 +51,11 @@ async function getJSON(fileName) {
 
 function getUrlVars() {
     let vars = [], hash = "", array = "";
-    hash  = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for (let i = 0; i < hash.length; i++) {
-        array = hash[i].split('=');
-        vars.push(array[0]);
+    hash = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    hash.forEach(c => {
+        array = c.split('=');
+        vars.push(c);
         vars[array[0]] = array[1];
-    }
+    })
     return vars;
 }

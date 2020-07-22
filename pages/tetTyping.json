@@ -1,6 +1,7 @@
 {
     "name" : "Tetris Typing",
     "author" : "Ryoga.exe",
+    "year" : 2019,
     "tags" : ["2019","game"],
     "image" : "img/tettype.png"
 }
