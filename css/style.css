@@ -52,7 +52,7 @@ a{
     width         : 100%;
 }
 
-#works>.contents {
+#works>.item {
     position: relative;
     display: block;
     background-color: white;
@@ -66,7 +66,7 @@ a{
     margin    : 10px;
 }
 
-.contents span {
+#works>.item span {
     display : -webkit-box;
     display : -webkit-flex;
     display : -ms-flexbox;
@@ -85,7 +85,7 @@ a{
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.6), 0px 1px 3px rgba(0, 0, 0, 0.6), 0px 1px 0 rgba(0, 0, 0, 0.6);
     transition: height 0.15s ease-out, font-size 0.15s ease-out;
 }
-.contents:hover span {
+#works>.item:hover span {
     height: 100%;
     border-radius: 2vh;
     font-size: 1.2em;

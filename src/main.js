@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     pageFiles.forEach(c => {
         let container = document.createElement('article');
         let description = document.createElement('span');
-        container.className = 'contents'
+        container.className = 'item'
         description.textContent = c.name === undefined ? ' ' : c.name;
         if (c.image !== undefined) container.style.backgroundImage = 'url(pages/' + c.image + ')';
         container.appendChild(description);
