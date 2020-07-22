@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             let description = document.createElement('span');
             article.className = 'item'
             description.textContent = c.name === undefined ? ' ' : c.name;
-            if (c.image !== undefined) article.style.backgroundImage = 'url(pages/' + c.image + ')';
+            if (c.image !== undefined) article.style.backgroundImage = `url(pages/${c.image})`;
             article.appendChild(description);
             works.appendChild(article);
         }
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadPages() {
     for (let i = 0; i < pages.length; i++) {
-        pageFiles[i] = (await (getJSON('pages/' + pages[i] + '.json')));
+        pageFiles[i] = (await (getJSON(`pages/${pages[i]}.json`)));
     }
 }
 
