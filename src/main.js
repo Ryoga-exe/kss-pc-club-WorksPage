@@ -1,4 +1,4 @@
-let pages = ['sample', '10sChallenge', 'sigmabeat', 'tetTyping'];  // ToDo : 動的に、自動で page ディレクトリより取得
+let pages = ['sample', '10sChallenge', 'sigmabeat', 'tetTyping', '15puzzle'];  // ToDo : 動的に、自動で page ディレクトリより取得
 let pageFiles = new Array();
 document.addEventListener('DOMContentLoaded', async () => {
     
