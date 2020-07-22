@@ -1,4 +1,4 @@
-let pages = ['sample', '10sChallenge', 'sigmabeat', 'tetTyping', '15puzzle'];  // ToDo : 動的に、自動で page ディレクトリより取得
+const pages = ['sample', '10sChallenge', 'sigmabeat', 'tetTyping', '15puzzle'];  // ToDo : 動的に、自動で page ディレクトリより取得
 let pageFiles = new Array();
 document.addEventListener('DOMContentLoaded', async () => {
     
@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // ソートをする
     console.log(pageFiles); // to debug
 
-    let works = document.getElementById('works');
-
+    const works = document.getElementById('works');
     pageFiles.forEach(c => {
         let container = document.createElement('article');
         let description = document.createElement('span');
