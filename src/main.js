@@ -1,8 +1,10 @@
-const pages = ['sample', '10sChallenge', 'sigmabeat', 'tetTyping', '15puzzle'];  // ToDo : 動的に、自動で page ディレクトリより取得
-let pageFiles = new Array();
+const GITHUB_REPO_OWNER = location.hostname.split(".")[0]; // GitHub Pages で公開することを前提にしている。それ以外の場所で公開するときは値をハードコードするなどの変更が必要。
+const GITHUB_REPO_NAME = location.pathname.split("/")[1]; // GitHub Pages で公開することを前提にしている。それ以外の場所で公開するときは値をハードコードするなどの変更が必要。
+
 document.addEventListener('DOMContentLoaded', async () => {
 
-    await loadPages(); // ToDo 上限を設けて、More ボタンでさらに読み込む
+    const pageURLs = await loadPageURLs(); // ToDo Promiseがrejectされたときのエラー表示とか
+    const pageFiles = await loadPages(pageURLs); // ToDo 上限を設けて、More ボタンでさらに読み込む
     // ソートをする
     console.log(pageFiles);    // to debug
 
@@ -37,10 +39,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 })
 
-async function loadPages() {
-    for (let i = 0; i < pages.length; i++) {
-        pageFiles[i] = (await (getJSON(`pages/${pages[i]}.json`)));
-    }
+async function loadPageURLs() {
+	// https://docs.github.com/en/rest/reference/repos#get-repository-content
+	return fetch(`https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/pages`)
+		.then(r => r.json())
+		.then(json => json
+			.map(o => o["name"])
+			.filter(o => /^.*.json$/.test(o)) // pagesディレクトリのjsonのすべてがpageを表すものだという前提。
+			.map(o => `pages/${o}`));
+}
+
+async function loadPages(urls) {
+	return Promise.all(urls.map(o => fetch(o).then(r => r.json())));
 }
 
 async function getJSON(fileName) {
